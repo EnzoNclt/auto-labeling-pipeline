@@ -102,7 +102,7 @@ class GCPEntitiesRequestModel(RequestModel):
     language: Literal['zh', 'zh-Hant', 'en', 'fr', 'de', 'it', 'ja', 'ko', 'pt', 'ru', 'es']
 
     class Config:
-        title = 'GCP Entity Analysis'
+        title = 'GCP Entity Analysis TEST'
         schema_extra = {
             # https://cloud.google.com/natural-language/docs/reference/rest/v1/Entity#Type
             'types': [

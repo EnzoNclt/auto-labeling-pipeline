@@ -21,9 +21,10 @@ def test_filter_task(task, expected):
     'option_name',
     [
         'Custom REST Request',
+        'AFS REST Request',
         'Amazon Comprehend Sentiment Analysis',
         'Amazon Comprehend Entity Recognition',
-        'GCP Entity Analysis'
+        'GCP Entity Analysis TEST'
     ]
 )
 def test_find_option(option_name):

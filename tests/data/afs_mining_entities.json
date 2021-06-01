@@ -1,0 +1,74 @@
+{
+    "annotations": [
+        {
+            "entity": {
+                "id": "T00000",
+                "label": "PERSON",
+                "locations": [
+                    {
+                        "offset": 2,
+                        "size": 3
+                    }
+                ],
+                "proba": 0.6178058133741345,
+                "surface": "Enzo Nicoletti"
+            }
+        },
+        {
+            "entity": {
+                "id": "T00001",
+                "label": "ORG",
+                "locations": [
+                    {
+                        "offset": 8,
+                        "size": 2
+                    }
+                ],
+                "proba": 0.9024659856974966,
+                "surface": "Antidot"
+            }
+        },
+        {
+            "entity": {
+                "id": "T00002",
+                "label": "DATE",
+                "locations": [
+                    {
+                        "offset": 10,
+                        "size": 4
+                    }
+                ],
+                "proba": 0.9999999999999999,
+                "surface": "May 31th 2021"
+            }
+        },
+        {
+            "entity": {
+                "id": "T00003",
+                "label": "GPE",
+                "locations": [
+                    {
+                        "offset": 15,
+                        "size": 2
+                    }
+                ],
+                "proba": 0.9999137244170941,
+                "surface": "Debourg"
+            }
+        },
+        {
+            "entity": {
+                "id": "T00004",
+                "label": "ORG",
+                "locations": [
+                    {
+                        "offset": 2,
+                        "size": 3
+                    }
+                ],
+                "proba": 0.3790743721908907,
+                "surface": "Enzo Nicoletti"
+            }
+        }
+    ]
+}

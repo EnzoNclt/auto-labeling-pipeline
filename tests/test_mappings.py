@@ -1,6 +1,6 @@
 import json
 
-from auto_labeling_pipeline.mappings import (AmazonComprehendEntityTemplate, AmazonComprehendSentimentTemplate,
+from auto_labeling_pipeline.mappings import (AFSMiningEntitiesTemplate, AmazonComprehendEntityTemplate, AmazonComprehendSentimentTemplate,
                                              GCPEntitiesTemplate)
 
 
@@ -17,6 +17,13 @@ def test_amazon_comprehend_sentiment(data_path):
     expected = [{'label': 'NEUTRAL'}]
     assert labels == expected
 
+def test_amazon_comprehend_sentiment(data_path):
+    response = load_json(data_path / 'afs_mining_entities.json')
+    mapping_template = AFSMiningEntitiesTemplate()
+    labels = mapping_template.render(response)
+    labels = labels.dict()
+    expected = []
+    assert labels == expected
 
 def test_gcp_entities(data_path):
     response = load_json(data_path / 'gcp_entities.json')

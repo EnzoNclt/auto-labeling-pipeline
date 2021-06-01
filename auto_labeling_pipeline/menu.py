@@ -2,13 +2,12 @@ from typing import List, Type
 
 from pydantic import BaseModel
 
-from auto_labeling_pipeline.mappings import (AmazonComprehendEntityTemplate, AmazonComprehendSentimentTemplate,
-                                             GCPEntitiesTemplate, AFSMiningEntitiesTemplate, MappingTemplate)
-from auto_labeling_pipeline.models import (AmazonComprehendEntityRequestModel, AmazonComprehendPIIEntityRequestModel,
-                                           AmazonComprehendSentimentRequestModel, CustomRESTRequestModel,
-                                           GCPEntitiesRequestModel, AFSMiningRequestModel, RequestModel)
+from auto_labeling_pipeline.mappings import (AFSMiningEntitiesTemplate, AmazonComprehendEntityTemplate, AmazonComprehendSentimentTemplate,
+                                            GCPEntitiesTemplate, MappingTemplate)
+from auto_labeling_pipeline.models import (AFSMiningRequestModel, AmazonComprehendEntityRequestModel, AmazonComprehendPIIEntityRequestModel,
+                                            AmazonComprehendSentimentRequestModel, CustomRESTRequestModel,
+                                            GCPEntitiesRequestModel, RequestModel)
 from auto_labeling_pipeline.task import DocumentClassification, GenericTask, SequenceLabeling, Task, TaskFactory
-
 
 class Option(BaseModel):
     name: str
