@@ -52,3 +52,8 @@ class AmazonComprehendEntityTemplate(MappingTemplate):
 class GCPEntitiesTemplate(MappingTemplate):
     label_collection = SequenceLabels
     template_file = 'gcp_entities.jinja2'
+
+
+class AFSMiningEntitiesTemplate(MappingTemplate):
+    label_collection = SequenceLabels
+    template_file = 'afs_mining_spacy_ner.jinja2'

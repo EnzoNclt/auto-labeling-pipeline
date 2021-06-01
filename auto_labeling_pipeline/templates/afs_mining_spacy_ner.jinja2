@@ -1,0 +1,12 @@
+[
+    {% for entity in input.annotations %}
+        {% set outer_loop = loop %}
+            {%- set start_offset = entity.locations.offset -%}
+            {%- set end_offset = entity.locations.offset + entity.locations.size -%}
+            {
+                "start_offset": {{ start_offset }},
+                "end_offset": {{ end_offset }},
+                "label": "{{ entity.label }}"
+            }{% if not loop.last %},{% endif %}
+    {% endfor %}
+]

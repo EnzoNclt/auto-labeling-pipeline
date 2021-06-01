@@ -3,10 +3,10 @@ from typing import List, Type
 from pydantic import BaseModel
 
 from auto_labeling_pipeline.mappings import (AmazonComprehendEntityTemplate, AmazonComprehendSentimentTemplate,
-                                             GCPEntitiesTemplate, MappingTemplate)
+                                             GCPEntitiesTemplate, AFSMiningEntitiesTemplate, MappingTemplate)
 from auto_labeling_pipeline.models import (AmazonComprehendEntityRequestModel, AmazonComprehendPIIEntityRequestModel,
                                            AmazonComprehendSentimentRequestModel, CustomRESTRequestModel,
-                                           GCPEntitiesRequestModel, RequestModel)
+                                           GCPEntitiesRequestModel, AFSMiningRequestModel, RequestModel)
 from auto_labeling_pipeline.task import DocumentClassification, GenericTask, SequenceLabeling, Task, TaskFactory
 
 
@@ -61,5 +61,6 @@ class Options:
 Options.register(GenericTask, CustomRESTRequestModel, MappingTemplate)
 Options.register(DocumentClassification, AmazonComprehendSentimentRequestModel, AmazonComprehendSentimentTemplate)
 Options.register(SequenceLabeling, GCPEntitiesRequestModel, GCPEntitiesTemplate)
+Options.register(SequenceLabeling, AFSMiningRequestModel, AFSMiningEntitiesTemplate)
 Options.register(SequenceLabeling, AmazonComprehendEntityRequestModel, AmazonComprehendEntityTemplate)
 Options.register(SequenceLabeling, AmazonComprehendPIIEntityRequestModel, AmazonComprehendEntityTemplate)

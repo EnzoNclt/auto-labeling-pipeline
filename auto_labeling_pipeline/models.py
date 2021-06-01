@@ -64,6 +64,33 @@ class CustomRESTRequestModel(RequestModel):
         ).json()
         return response
 
+class AFSMiningRequestModel(RequestModel):
+    """
+    This allow you to call AFS ML API.
+    """
+    url: AnyHttpUrl
+    method: Literal['GET', 'POST']
+    params: Optional[dict]
+    headers: Optional[dict]
+    body: Optional[dict]
+
+    class Config:
+        title = 'AFS REST Request'
+        schema_extra = {
+            'types': [
+                'UNKNOWN', 'PERSON', 'LOCATION', 'ORG', 'DATE'
+            ]
+        }
+
+    def send(self, text: str):
+        find_and_replace_value(self.body, text)
+        find_and_replace_value(self.params, text)
+        url = 'http://localhost:5000/predictors/' + self.predictor_id + '/predict'
+        headers = self.headers
+        params = self.params
+        body = self.body
+        response = requests.get(url, headers=headers, params=params, json=body).json()
+        return response
 
 class GCPEntitiesRequestModel(RequestModel):
     """
